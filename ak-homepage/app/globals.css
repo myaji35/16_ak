@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%;
+    --ak-green: 122 49% 33%;
+    --ak-brown: 16 25% 38%;
+    --ak-gold: 48 96% 57%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  /* Better focus states for accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--ak-green));
+    outline-offset: 2px;
+  }
+
+  /* Smooth transitions for interactive elements */
+  button, a, input, textarea, select {
+    transition: color 200ms, background-color 200ms, border-color 200ms;
+  }
+
+  /* Better touch targets for mobile */
+  @media (max-width: 768px) {
+    button, a {
+      min-height: 44px;
+    }
+  }
+}
